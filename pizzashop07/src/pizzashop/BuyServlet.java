@@ -27,6 +27,7 @@ public class BuyServlet extends HttpServlet {
 		String count2 = req.getParameter("text");
 		int count = Integer.parseInt(count2);
 		String topping = req.getParameter("topping");
+		String side = req.getParameter("side");
 		String delivery ="送料300円";
 		if(count>9) delivery="送料無料";
 		if (count > 4)
@@ -36,7 +37,7 @@ public class BuyServlet extends HttpServlet {
 		else {
 		
 			Date date = Calendar.getInstance().getTime();
-			Last mdata = new Last(title, count, topping, date,delivery);
+			Last mdata = new Last(title, count, topping, side,date,delivery);
 			PersistenceManagerFactory factory = PMF.get();
 			PersistenceManager manager = factory.getPersistenceManager();
 

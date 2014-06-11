@@ -22,6 +22,7 @@ function callback2(request) {
 					+ json[i].title + ');">' + json[i].title + '</a></td>';
 			res += '<td>' + json[i].count+ '枚</td>';
 			res += '<td>' + json[i].topping+ '</td>'
+			res += '<td>' + json[i].side+ '</td>'
 			res += '<td>' + json[i].delivery+ '</td>'
 		     + '<td><a href="del.html?id='
 			+ json[i].id + '">Delete</td></tr>';

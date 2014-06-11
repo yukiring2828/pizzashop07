@@ -21,17 +21,22 @@ public class Last {
     
     @Persistent
     private String delivery;
+    
+    @Persistent
+    private String side;
+     
      
      
      
     @Persistent
     private Date datetime;
  
-    public Last(String title,  int count, String topping,Date datetime,String delivery) {
+    public Last(String title,  int count, String topping,String side, Date datetime,String delivery) {
         super();
         this.title = title;
         this.count = count;
         this.topping = topping;
+        this.side=side;
         this.datetime = datetime;
         this.delivery=delivery;
     }
@@ -50,6 +55,15 @@ public class Last {
  
     public void setTitle(String title) {
         this.title = title;
+    }
+    
+
+    public String getSide() {
+        return side;
+    }
+ 
+    public void setSide(String side) {
+        this.side = side;
     }
  
     public String getDelivery() {
