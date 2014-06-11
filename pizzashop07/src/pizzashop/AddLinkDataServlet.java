@@ -27,8 +27,11 @@ public class AddLinkDataServlet extends HttpServlet {
        String title = req.getParameter("title");
        String price = req.getParameter("price");
        String comment = req.getParameter("comment");
+       String topping = req.getParameter("topping");
+       String delivery = "終了しました";
+       
        Date date = Calendar.getInstance().getTime();
-       LinkData data = new LinkData(title,price,comment,date);
+       LinkData data = new LinkData(title,price,comment,date,topping,delivery);
        PersistenceManagerFactory factory = PMF.get();
        PersistenceManager manager = factory.getPersistenceManager();
        try {

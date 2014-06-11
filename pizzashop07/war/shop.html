@@ -21,8 +21,10 @@ function callback2
 		for (var i = 0; i < json.length; i++) {
 			res += '<td><a href="javascript:return false;" onclick="getData3('
 					+ json[i].title + ');">' + json[i].title + '</a></td>';
-			res += '<td><a href="' + json[i].count + '">' + json[i].count+ '</a></td>'
-			     + '<td><a href="del.html?id='
+			res += '<td>' + json[i].count+ '枚</td>'
+			     + '<td>' + json[i].topping+ '</td>'
+			     + '<td>' + json[i].delivery+ '</td>'
+			     +'<td><a href="del.html?id='
 				+ json[i].id + '">Delete</td></tr>';
 		}
 	}

@@ -12,52 +12,68 @@
 
 
 <script type="text/javascript" src="menu.js"></script>
-<script type="text/javascript">
-<!--
-	function callback(request) {
-		var json = eval(request.responseText);
-		var res = '';
-		if (json.length == 1) {
-			res += '<tr><td>' + json[0].id + '</td></tr>';
-			res += '<tr><td>' + json[0].title + '</td></tr>';
-			res += '<tr><td>' + json[0].price + '</td></tr>';
-			res += '<tr><td>' + json[0].comment + '</td></tr>';
-		} else {
-			for (var i = 0; i < json.length; i++) {
-				res += '<tr><td><input type="radio" name="example" value="'+json[i].title+'"></td>';
-				res += '<td><a href="javascript:return false;" onclick="getData2('
-						+ json[i].title + ');">' + json[i].title + '</a></td>';
-				res += '<td><a href="' + json[i].price + '">' + json[i].price+ '</a></td>';
-			}
-		}
-		var obj = document.getElementById("datatable1");
-		obj.innerHTML = res;
-	}
-//-->
-</script>
+
 </head>
 
 <body bgcolor="#ffaec9" onload="getData2(null);">
+<CENTER>
 <img src="Pizza.jpg" border="0">
 	<h1>ピザショップメニュー</h1>
+	<tr>会員登録がおすみではないお客様は先にお済ませください</tr>
+	<a href="Login.html">会員登録</a>
 	<form method="post" action="/buy">
-		<body onload="getData2(null);">
-
-			<table id="datatable1" border="1">
-				<SCRIPT LANGUAGE="JavaScript">
-				<!--
-					document.write("こんにちは");
-				//-->
-				</SCRIPT>
-
-				<tr>
-					<td>wait...</td>
-				</tr>
-			</table>
+	<br>
+	<br>
+	<table border= "1" >
+	<td>
+	<h2>ピザ一覧</h2>
+	1枚＝1000円<br>
+			<input type= "radio" name ="example" value ="バニーの炒飯ピザ"checked> バニーの炒飯ピザ
+			<br>
+			<input type= "radio" name ="example" value ="マルゲリータ"> マルゲリータ
+			<br>
+			<input type= "radio" name ="example" value ="生ハムとルッコラ"> 生ハムとルッコラ
+			<br>
+			<input type= "radio" name ="example" value ="地中海の恵み"checked> 地中海の恵み
+			<br>
+			<input type= "radio" name ="example" value ="イチゴのデザートピッツァ"> イチゴのデザートピッツァ
+			<br>
+			<input type= "radio" name ="example" value ="もち明太子ピザ"> もち明太子ピザ
+			<br>
+			</td>
+			<br>
+			
+			<br>
+			<td>
+			<h2>トッピング</h2>
+			<br>
+			<br>
+			<input type= "radio" name ="topping" value ="チーズ"checked> チーズ
+			<input type= "radio" name ="topping" value ="トマト"> トマト
+			<input type= "radio" name ="topping" vakue ="えび"> えび
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			
+			</td></table>
+			
+			
+			<br>
+			<h2>枚数選択</h2>
+			<br>
+			<tr>①5枚以上だと1枚サービス②10枚以上だと送料無料<tr>
 			<br>
 			<input type="text" name="text" value="0">枚
 			<br>
+			<br>
+			<td>送料は一律３００円</td>
+			<br>
 			<input type="submit" name="button" value="注文する" />
+		
+			
 	</form>
 	<!--  
 	<div>
@@ -72,5 +88,9 @@
 		<div>
 		<a href="shop.html">客の注文一覧</a>
 	</div>
+	</CENTER>
+	<br>
+	<br>
+	<br>
 </body>
 </html>

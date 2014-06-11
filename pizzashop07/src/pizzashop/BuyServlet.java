@@ -24,17 +24,28 @@ public class BuyServlet extends HttpServlet {
 			throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		String title = req.getParameter("example");
-		String count = req.getParameter("text");
-		Date date = Calendar.getInstance().getTime();
-		Last mdata = new Last(title, count, date);
-		PersistenceManagerFactory factory = PMF.get();
-		PersistenceManager manager = factory.getPersistenceManager();
+		String count2 = req.getParameter("text");
+		int count = Integer.parseInt(count2);
+		String topping = req.getParameter("topping");
+		String delivery ="送料300円";
+		if(count>9) delivery="送料無料";
+		if (count > 4)
+			count++;
+		if (count2.equals("0"))
+			resp.sendRedirect("/index2.html");
+		else {
+		
+			Date date = Calendar.getInstance().getTime();
+			Last mdata = new Last(title, count, topping, date,delivery);
+			PersistenceManagerFactory factory = PMF.get();
+			PersistenceManager manager = factory.getPersistenceManager();
 
-		try {
-			manager.makePersistent(mdata);
-		} finally {
-			manager.close();
+			try {
+				manager.makePersistent(mdata);
+			} finally {
+				manager.close();
+			}
+			resp.sendRedirect("/Last.html");
 		}
-		resp.sendRedirect("/Last.html");
 	}
 }// (次にやること)テキストフィールドを一つにして、チェックボックスで一つだけ選ばせてテキストフィールドに選んだピザの注文したい枚数を入力させる。まだ注文があるならindexに戻ってくるようにする。

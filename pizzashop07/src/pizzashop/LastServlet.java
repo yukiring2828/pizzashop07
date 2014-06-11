@@ -34,8 +34,9 @@ public class LastServlet extends HttpServlet {
         if (list != null){
             for(Last data:list){
                 res += "{id:" + data.getId() + ",count:'" + data.getCount() + "',title:'" +
-                    data.getTitle() + "',date:'" + data.getDatetime() +
-                     "'},";
+                    data.getTitle() +"',delivery:'" +
+                            data.getDelivery() + "',date:'" + data.getDatetime() +
+                     "',topping:'" +data.getTopping()+"'},";
             }
         }
         res += "]";

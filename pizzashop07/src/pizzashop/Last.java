@@ -14,16 +14,26 @@ public class Last {
     private String title;
      
     @Persistent
-    private String count;
+    private int count;
+    
+    @Persistent
+    private String topping;
+    
+    @Persistent
+    private String delivery;
+     
+     
      
     @Persistent
     private Date datetime;
  
-    public Last(String title,  String count, Date datetime) {
+    public Last(String title,  int count, String topping,Date datetime,String delivery) {
         super();
         this.title = title;
         this.count = count;
+        this.topping = topping;
         this.datetime = datetime;
+        this.delivery=delivery;
     }
  
     public Long getId() {
@@ -42,13 +52,28 @@ public class Last {
         this.title = title;
     }
  
+    public String getDelivery() {
+        return delivery;
+    }
  
-    public String getCount() {
+    public void setDelivery(String delivery) {
+        this.delivery = delivery;
+    }
+ 
+    public int getCount() {
         return count;
     }
  
-    public void setCount(String count) {
+    public void setCount(int count) {
         this.count = count;
+    }
+
+    public String getTopping() {
+        return topping;
+    }
+ 
+    public void setTopping(String topping) {
+        this.topping = topping;
     }
  
     public Date getDatetime() {

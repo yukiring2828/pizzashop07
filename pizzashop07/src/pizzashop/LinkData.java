@@ -18,16 +18,24 @@ public class LinkData {
      
     @Persistent
     private String comment;
+    
+    @Persistent
+    private String topping;
+    
+    @Persistent
+    private String delivery;
      
     @Persistent
     private Date datetime;
  
-    public LinkData(String title, String price, String comment, Date datetime) {
+    public LinkData(String title, String price, String comment, Date datetime, String topping,String delivery) {
         super();
         this.title = title;
         this.price = price;
         this.comment = comment;
         this.datetime = datetime;
+        this.topping = topping;
+        this.delivery =delivery;
     }
  
     public Long getId() {
@@ -61,6 +69,23 @@ public class LinkData {
     public void setComment(String comment) {
         this.comment = comment;
     }
+    
+    public String getTopping() {
+        return topping;
+    }
+ 
+    public void setTopping(String topping) {
+        this.topping = topping;
+    }
+    
+    public String getDelivery() {
+        return delivery;
+    }
+ 
+    public void setDelivery(String delivery) {
+        this.delivery = delivery;
+    }
+ 
  
     public Date getDatetime() {
         return datetime;
